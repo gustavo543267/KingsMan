@@ -4,7 +4,7 @@ const products = [
 {id:3,name:"City Leather Trainers",category:"footwear",type:"FOOTWEAR",price:68,image:"https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=85",tag:"BESTSELLER"},
 {id:4,name:"The Everyday Timepiece",category:"accessories",type:"ACCESSORIES",price:115,image:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=85",tag:"SIGNATURE"},
 {id:5,name:"Tailored Weekend Shirt",category:"clothing",type:"SHIRTS",price:49,image:"https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=900&q=85",tag:"NEW"},
-{id:6,name:"Minimal Leather Loafers",category:"footwear",type:"FOOTWEAR",price:79,image:"https://images.unsplash.com/photo-1614252369475-531on8f5?auto=format&fit=crop&w=900&q=85",tag:"THE EDIT"},
+{id:6,name:"Minimal Leather Loafers",category:"footwear",type:"FOOTWEAR",price:79,image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85",tag:"THE EDIT"},
 {id:7,name:"Classic Frame Sunglasses",category:"accessories",type:"ACCESSORIES",price:35,image:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85",tag:"ESSENTIAL"},
 {id:8,name:"Structured City Jacket",category:"clothing",type:"JACKETS",price:96,image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=85",tag:"LIMITED EDIT"}];
 const money = value => new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP"}).format(value);
@@ -21,7 +21,7 @@ document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{
 document.querySelector(".search-toggle").addEventListener("click",()=>{document.getElementById("search-panel").classList.add("open");document.getElementById("search-input").focus()});
 document.getElementById("search-close").addEventListener("click",()=>{document.getElementById("search-panel").classList.remove("open");document.getElementById("search-input").value="";searchTerm="";renderProducts()});
 document.getElementById("search-input").addEventListener("input",e=>{searchTerm=e.target.value.trim().toLowerCase();activeFilter="all";document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.filter==="all"));renderProducts()});
-document.getElementById("menu-toggle").addEventListener("click",()=>{document.querySelector(".desktop-nav").classList.toggle("mobile-open");toast("Use the collection filters below")});
+document.getElementById("menu-toggle").addEventListener("click",()=>{document.querySelector(".desktop-nav").classList.toggle("mobile-open")});
 document.getElementById("checkout-button").addEventListener("click",()=>toast("Checkout is not connected yet — payment and supplier setup comes next."));
 document.getElementById("newsletter-form").addEventListener("submit",e=>{e.preventDefault();document.getElementById("newsletter-message").textContent="Thanks for your interest. Newsletter sign-up will be connected before launch.";e.target.reset()});
 renderProducts();renderCart();
